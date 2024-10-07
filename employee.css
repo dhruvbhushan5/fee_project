@@ -1,0 +1,112 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+/* Navbar Styles */
+.navbar {
+    background-color: #007bff;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar ul li a:hover {
+    background-color: #0056b3;
+    border-radius: 4px;
+}
+
+/* Team Section */
+.team1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.team-leader,
+.team-member {
+    margin: 10px;
+    text-align: center;
+}
+
+.team-leader img,
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+}
+
+.show-details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.show-image {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.show-image p {
+    position: absolute;
+    top: 72%;
+}
+.show-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+}
+
+/* Calendar Section */
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-width: 200px;
+    margin-top: 20px;
+    position: absolute;
+    top: 50%;
+    right: 25%;
+}
+
+.calendar-day {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.calendar-day.leave-taken {
+    background-color: #dc3545;
+    color: white;
+}
+
+.calendar-day.no-leave {
+    background-color: #28a745;
+    color: white;
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard | By Code Info</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome Cdn Link -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li>
+          <a href="#" class="logo">
+            <img src="Screenshot 2024-09-12 220343.png" alt="">
+            <span class="nav-item">DashBoard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-home"></i>
+            <span class="nav-item">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#teams">
+            <i class="fas fa-user"></i>
+            <span class="nav-item">Teams</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#progress">
+            <i class="fas fa-chart-bar"></i>
+            <span class="nav-item">Progress</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fas fa-tasks"></i>
+            <span class="nav-item">Tasks</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="index.html" class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="nav-item">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="main">
+      <div class="main-top" id="teams">
+        <h1 style="margin: auto">TEAMS</h1>
+        <i class="fas fa-user-cog"></i>
+      </div>
+      <div class="main-skills">
+        <div class="card" data-team="1">
+          <i class="fas fa-users"></i>
+          <h3>Team 1</h3>
+          <h4>John (Team Lead)</h4>
+          <h5>Steve</h5>
+          <h5>Tony</h5>
+          <h5>sony</h5>
+        </div>
+        <div class="card" data-team="2">
+          <i class="fas fa-users"></i>
+          <h3>Team 2</h3>
+          <h4>Bruce</h4>
+          <h5>Steve</h5>
+          <h5>Tony</h5>
+          <h5>Natasha</h5>
+        </div>
+        <div class="card" data-team="3">
+          <i class="fas fa-users"></i>
+          <h3>Team 3</h3>
+          <h4>Bruce</h4>
+          <h5>Steve</h5>
+          <h5>Tony</h5>
+          <h5>Natasha</h5>
+        </div>
+        <div class="card" data-team="4">
+          <i class="fas fa-users"></i>
+          <h3>Team 4</h3>
+          <h4>Bruce</h4>
+          <h5>Steve</h5>
+          <h5>Tony</h5>
+          <h5>Natasha</h5>
+        </div>
+      </div>
+
+      <!-- Attendance Section -->
+      <div class="attendance-section" id="attendanceSection" style="display:none;">
+        <h2>Attendance</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Attendance</th>
+            </tr>
+          </thead>
+          <tbody id="attendanceBody">
+            <!-- Attendance data will be inserted here -->
+          </tbody>
+        </table>
+        <button onclick="closeAttendance()">Close</button>
+      </div>
+
+      
+      <div class="card-body">
+        <br> <h1 class="card-title" style="margin:auto;width:130px">PROGRESS</h1><br>
+        
+         <div class="table-responsive">
+             <table class="table table-striped">
+                 <thead>
+                     <tr>
+                         <th>
+                             User
+                         </th>
+                         <th>
+                             Teams
+                         </th>
+                         <th>
+                             Progress
+                         </th>
+                         <th>
+                             Tasks Completed
+                         </th>
+                         <th>
+                             Tasks Given
+                         </th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         <td class="py-1">
+                             <img src="https://picsum.photos/40/40" alt="image">
+                         </td>
+                         <td>
+                             Team 1
+                         </td>
+                         <td>
+                             <div class="progress">
+                                 <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                      80%
+                                 </div>
+                             </div>
+                         </td>
+                         <td>
+                             8
+                         </td>
+                         <td>
+                             10
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="py-1">
+                             <img src="https://picsum.photos/40/40" alt="image">
+                         </td>
+                         <td>
+                             Team 2
+                         </td>
+                         <td>
+                             <div class="progress">
+                                 <div class="progress-bar bg-danger" role="progressbar" style="width: 90%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                90%
+                                 </div>
+                             </div>
+                         </td>
+                         <td>
+                             9
+                         </td>
+                         <td>
+                             10
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="py-1">
+                             <img src="https://picsum.photos/40/40" alt="image">
+                         </td>
+                         <td>
+                             Team 3
+                         </td>
+                         <td>
+                             <div class="progress">
+                                 <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                    75%
+                                 </div>
+                             </div>
+                         </td>
+                         <td>
+                             6
+                         </td>
+                         <td>
+                             8
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="py-1">
+                             <img src="https://picsum.photos/40/40" alt="image">
+                         </td>
+                         <td>
+                             Team 4
+                         </td>
+                         <td>
+                             <div class="progress">
+                                 <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                     100%
+                                 </div>
+                             </div>
+                         </td>
+                         <td>
+                             6
+                         </td>
+                         <td>
+                             6
+                         </td>
+                     </tr>
+                     
+                 </tbody>
+             </table>
+         </div>
+     </div>
+    </section>
+  </div>
+
+  <script>
+    // Simulated attendance data
+    const attendanceData = {
+      1: {
+        members: [
+          { name: 'Ram', attendance: '90%' },
+          { name: 'Steve', attendance: '85%' },
+          { name: 'Tony', attendance: '88%' },
+          { name: 'Natasha', attendance: '95%' }
+        ]
+      },
+      2: {
+        members: [
+          { name: 'Lakshaman', attendance: '80%' },
+          { name: 'Nakul', attendance: '78%' },
+          { name: 'Sehdev', attendance: '82%' },
+          { name: 'Krishna', attendance: '90%' }
+        ]
+      },
+      3: {
+        members: [
+          { name: 'Arjun', attendance: '75%' },
+          { name: 'Rahul', attendance: '88%' },
+          { name: 'Aryan', attendance: '85%' },
+          { name: 'Bhavesh', attendance: '92%' }
+        ]
+      },
+      4: {
+        members: [
+          { name: 'Bheem', attendance: '80%' },
+          { name: 'Gagan', attendance: '82%' },
+          { name: 'Deepak', attendance: '89%' },
+          { name: 'Hardik', attendance: '93%' }
+        ]
+      }
+    };
+
+    // Function to display attendance when a team is clicked
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', function () {
+        const teamId = this.getAttribute('data-team');
+        showAttendance(teamId);
+      });
+    });
+
+    function showAttendance(teamId) {
+      const attendanceSection = document.getElementById('attendanceSection');
+      const attendanceBody = document.getElementById('attendanceBody');
+      const team = attendanceData[teamId];
+
+      // Clear previous attendance data
+      attendanceBody.innerHTML = '';
+
+      // Populate new attendance data
+      team.members.forEach(member => {
+        const row = `<tr><td>${member.name}</td><td>${member.attendance}</td></tr>`;
+        attendanceBody.innerHTML += row;
+      });
+
+      // Show the attendance section
+      attendanceSection.style.display = 'block';
+    }
+
+    // Function to close attendance section
+    function closeAttendance() {
+      document.getElementById('attendanceSection').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

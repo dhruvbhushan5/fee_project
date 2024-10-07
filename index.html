@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0; */
+        }
+        #image{
+            border-radius: 50%;
+        }
+
+        .container {
+            width: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 600px;
+            margin-top: 50px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 60px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ADD8E6;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .dashboard {
+            display: none;
+            height: 100vh;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 280px;
+            background-color: #343a40;
+            color: white;
+        }
+
+        .p-4 {
+            margin-left: 26px;
+            flex-grow: 1;
+        }
+
+        .nav-link:hover {
+            background-color: rgb(67, 70, 70);
+            color: black;
+        }
+
+        .nav-link i {
+            font-size: 1.25rem;
+            vertical-align: middle;
+        }
+
+        .user-dropdown {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 280px;
+            z-index: 1;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown-menu-end {
+            right: 0;
+            left: auto;
+        }
+
+        .team-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .team-card-header {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-bottom: 1px solid #dee2e6;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .team-member {
+            padding: 10px 15px;
+            border-bottom: 1px solid #dee2e6;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .team-member:last-child {
+            border-bottom: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .team-member:hover {
+            background-color: #f8f9fa;
+        }
+
+        .team-lead {
+            font-weight: bold;
+            background-color: #e9ecef;
+        }
+
+        .calendar {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+
+        .calendar-day {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .present {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .absent {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+		#teams-content{
+			margin-right: 174px;
+		}
+    </style>
+</head>
+<img src="Screenshot 2024-09-12 220343.png" alt="" height="150px" id="image">
+<body>
+    <!-- Login Form -->
+
+   
+    <div class="container">
+        <div class="form-container" id="login-form">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const loginEmail = document.getElementById('login-email');
+        const loginPassword = document.getElementById('login-password');
+        const loginFormDiv = document.getElementById('login-form');
+        const adminDashboard = document.getElementById('admin-dashboard');
+        const employeeDashboard = document.getElementById('employee-dashboard');
+
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const email = loginEmail.value;
+            const password = loginPassword.value;
+
+            if (email === 'admin@example.com' && password === 'admin') {
+                // loginFormDiv.style.display = 'none';
+                // adminDashboard.style.display = 'block';
+                window.location.href = "dash.html";
+            } else if (email === 'employee@example.com' && password === 'employee') {
+                // loginFormDiv.style.display = 'none';
+                // employeeDashboard.style.display = 'block';
+                window.location.href = "dash.html";
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

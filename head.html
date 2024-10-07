@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+    <style>
+        /* General body styling */
+body {
+    background-color: antiquewhite;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Heading styling */
+h1 {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Employee dashboard section and details styling */
+.employeedash,
+#showdetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 95%;
+    margin: 10px;
+    margin: 10px;
+    margin-top: 70px;
+    margin-left: 27px;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    width: 70%;
+    margin: 15px auto;
+    font-size: 20px;
+    justify-content: space-around;
+}
+
+li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+a#team1 {
+    text-decoration: none;
+    cursor: pointer;
+    color: #333;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 5px 0 5px 0;
+
+}
+
+a#team1:hover {
+    background-color: #d3d3d3;
+}
+
+/* Team members section */
+.team1 {
+    display: flex;
+    width: 80%;
+    margin-top: 15px;
+    margin-left: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.team-member,
+.team-leader {
+    display: flex;
+    text-align: center;
+    margin: 10px;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin: 10px 0;
+}
+
+img.teamleader,
+img.mem-1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Show details section styling */
+#showdetails {
+    display: none;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin: 0;
+    margin-left: 10%;
+    width: 50%;
+    margin-top: -23px;
+}
+
+.show-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+
+/* Task assignment section styling */
+.assign-complete-task {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.assign-complete-task p {
+    font-size: 2rem;
+    font-weight: 200;
+    margin: 0 30px 0 70px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.assign-complete-task p:hover {
+    color: #007bff;
+}
+
+.show-count-task {
+    width: 50px;
+    text-align: center;
+    margin: 0 20px;
+    font-size: 16px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Meeting section */
+.meet {
+    display: flex;
+    
+    margin-top: 10px;
+    width: 100%;
+    
+    font-size: 100px;
+    /* padding: 20px; */
+    /* background-color: #f9f9f9; */
+    border-radius: 40px;
+}
+.meet-button{
+    font-size: 30px;
+    margin-left: 150px;
+    padding: 0 30px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="employeedash">
+        <h1>Employee Dashboard</h1>
+        <div class="navbar">
+            <ul>
+                <li><a id="team1">Team 1</a></li>
+                <li><a id="team1">Team 2</a></li>
+                <li><a id="team1">Team 3</a></li>
+            </ul>
+
+            <div class="team1">
+                <div class="team-leader">
+                    <img src="pic-3.jpg" alt="Team Leader" class="teamleader">
+                    <p>Team Leader</p>
+                </div>
+                <div class="team-member team-member-1">
+                    <img src="pic-3.jpg" alt="Team Member 1" class="mem-1">
+                    <p>Team Member 1</p>
+                </div>
+                <div class="team-member team-member-2">
+                    <img src="pic-3.jpg" alt="Team Member 2" class="mem-1">
+                    <p>Team Member 2</p>
+                </div>
+                <div class="team-member team-member-3">
+                    <img src="pic-3.jpg" alt="Team Member 3" class="mem-1">
+                    <p>Team Member 3</p>
+                </div>
+            </div>
+        </div>
+        <div id="showdetails">
+            <div class="show-image">
+            <img src="" alt="">
+            <p></p>
+        </div>
+        <div class="assign-complete-task">
+            <p>Assigned Task</p>
+            <p>Completed Task</p>
+        </div>
+        <!-- <div class="show-count-task">
+        </div> -->
+        <div class="meet">
+            <button class="meet-button">Meeting</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        const showdetails = document.getElementById('showdetails');
+        const showImage = document.querySelector('.show-image img');
+        const member1 = document.querySelector('.team-member-1');
+        const member2 = document.querySelector('.team-member-2');
+        const member3 = document.querySelector('.team-member-3');
+        const member4 = document.querySelector('.team-member-4');
+
+        // Event listener for Team Member 1
+        member1.addEventListener('click', () => {
+    showdetails.style.display = 'flex';
+    showImage.src = 'pic-3.jpg';
+    showImage.alt = 'Team Member 1';
+    const detailsText = showdetails.querySelector('p');
+    detailsText.textContent = 'Team Member 1 details';
+    detailsText.style.fontSize = '2rem'; // Change the font size here
+});
+
+
+        // Event listener for Team Member 2
+        member2.addEventListener('click', () => {
+            showdetails.style.display = 'flex';
+            showImage.src = 'pic-3.jpg';
+            showImage.alt = 'Team Member 2';
+            const detailsText = showdetails.querySelector('p');
+            detailsText.textContent = 'Team Member 2 details';
+            detailsText.style.fontSize = '2rem'; // Change the font size here
+        });
+
+        // Event listener for Team Member 3
+        member3.addEventListener('click', () => {
+            showdetails.style.display = 'flex';
+            showImage.src = 'pic-3.jpg';
+           
+            showImage.alt = 'Team Member 3';
+            const detailsText = showdetails.querySelector('p');
+            detailsText.textContent = 'Team Member 3 details';
+            detailsText.style.fontSize = '2rem'; // Change the font size here
+        });
+
+        // Event listener for Team Member 4
+        member4.addEventListener('click', () => {
+            showdetails.style.display = 'flex';
+            showImage.src = 'pic-3.jpg';
+            showImage.alt = 'Team Member 4';
+            const detailsText = showdetails.querySelector('p');
+            detailsText.textContent = 'Team Member 4 details';
+            detailsText.style.fontSize = '2rem'; // Change the font size here
+        });
+        var event = { title: 'New Event', start: selectDate };
+
+        $('#calendar').fullCalendar('renderEvent', event, true);
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+</body>
+
+</html>
